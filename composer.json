@@ -1,0 +1,21 @@
+{
+    "name": "mharj/mysql-util",
+    "description": "MySQL URI parser",
+    "type": "library",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marko Harjula",
+            "email": "marko.harjula@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "mharj": "src/"
+        }
+    }
+}
