@@ -24,6 +24,10 @@ class MySqlConfig
      */
     public static function parseFromUri($variable)
     {
+        $parts = parse_url($variable);
+        foreach($parts as $name => $value) {
+            $parts[$name] = urldecode($value);
+        }
         $data = array_merge(
             [
                 'host' => 'localhost',
@@ -32,7 +36,7 @@ class MySqlConfig
                 'pass' => '',
                 'path' => '/mysql',
             ],
-            array_filter(parse_url($variable)),
+            array_filter($parts),
         );
         return new MysqlConfig($data['host'], '' . $data['port'], $data['user'], $data['pass'], ltrim($data['path'], '/'));
     }
